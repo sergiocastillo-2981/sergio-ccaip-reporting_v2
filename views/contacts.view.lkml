@@ -6,10 +6,11 @@ view: contacts
     sql:
       SELECT distinct c.id as contact_id
           ,c.instance_id
+          ,c.instance_name
           ,CAST(c.created_at AS timestamp) as started_at
           ,CAST(c.ends_at AS timestamp) as ended_at
-          ,c.brand_id
-          ,c.brand_name
+          --,c.brand_id
+          --,c.brand_name
           ,call_type as contact_type
           ,'phone' as contact_category
           ,agent_info.id agent_id
@@ -48,9 +49,10 @@ view: contacts
           left JOIN UNNEST (c.transfers) AS tr
       GROUP BY
           c.id
-          ,c.brand_id
-          ,c.brand_name
+          --,c.brand_id
+          --,c.brand_name
           ,c.instance_id
+          ,c.instance_name
           ,c.created_at
           ,c.ends_at
           ,call_type
@@ -71,10 +73,11 @@ view: contacts
 
       SELECT distinct c.id as contact_id
       ,c.instance_id
+      ,c.instance_name
       ,CAST(c.created_at AS timestamp) as started_at
       ,CAST(c.ends_at AS timestamp) as ended_at
-      ,c.brand_id
-      ,c.brand_name
+      --,c.brand_id
+      --,c.brand_name
       ,chat_type as contact_type
       ,'chat' as contact_category
       ,agent_info.id agent_id
@@ -112,9 +115,10 @@ view: contacts
       left JOIN UNNEST (c.transfers) AS tr
       GROUP BY
       c.id
-      ,c.brand_id
-      ,c.brand_name
+      --,c.brand_id
+      --,c.brand_name
       ,c.instance_id
+      ,c.instance_name
       ,c.created_at
       ,c.ends_at
       ,chat_type
@@ -355,13 +359,13 @@ view: contacts
   dimension: brand_id
   {
     type: number
-    sql: ${TABLE}.brand_id ;;
+    sql: ${TABLE}.instance_id ;;
   }
 
   dimension: brand_name
   {
     type: string
-    sql: ${TABLE}.brand_name ;;
+    sql: ${TABLE}.instance_name ;;
   }
 
   dimension: selected_menu_id
