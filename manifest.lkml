@@ -19,3 +19,9 @@ constant: PROJECT_NAME
   value: "ccaip-reporting-lab"
   export: override_optional
 }
+
+
+constant: CCAIP_MODEL {
+  value: "sergio_ccaip_reporting"
+  export: override_optional
+}

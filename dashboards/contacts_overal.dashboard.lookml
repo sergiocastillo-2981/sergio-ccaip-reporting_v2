@@ -8,7 +8,7 @@
   elements:
   - title: NLL SLA% KPI
     name: NLL SLA% KPI
-    model: ccaip_reporting
+    model: "@{CCAIP_MODEL}"
     explore: contacts
     type: marketplace_viz_radial_gauge::radial_gauge-marketplace
     fields: [contacts.perc_in_sla]
@@ -47,7 +47,7 @@
     height: 6
   - title: AA SLA% KPI
     name: AA SLA% KPI
-    model: ccaip_reporting
+    model: "@{CCAIP_MODEL}"
     explore: contacts
     type: marketplace_viz_radial_gauge::radial_gauge-marketplace
     fields: [contacts.perc_in_sla]
