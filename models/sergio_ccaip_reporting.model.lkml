@@ -5,8 +5,8 @@ connection: "@{CONNECTION_NAME}"
 # include all the views
 include: "/views/**/*.view"
 
-#Dashboards
-include: "/dashboards/contacts_overal.dashboard.lookml"   # Including LookML dashboard called agent_assist_metrics
+#Dashboards(This needs to be included on the model in order to show on the LookML Dashboard Folder)
+include: "/dashboards/contacts_overal.dashboard.lookml"
 
 
 datagroup: ccaip_reporting_default_datagroup {
