@@ -86,7 +86,7 @@
     height: 6
   - title: SLA %
     name: SLA %
-    model: ccaip_reporting
+    model: "@{CCAIP_MODEL}"
     explore: contacts
     type: marketplace_viz_radial_gauge::radial_gauge-marketplace
     fields: [contacts.perc_in_sla]
@@ -125,7 +125,7 @@
     height: 6
   - title: Overal Details
     name: Overal Details
-    model: ccaip_reporting
+    model: "@{CCAIP_MODEL}"
     explore: contacts
     type: table
     fields: [contacts.brand_name, contacts.selected_menu_name, contacts.count, contacts.count_handled,
@@ -179,7 +179,7 @@
       type: relative_timeframes
       display: inline
       options: []
-    model: ccaip_reporting
+    model: "@{CCAIP_MODEL}"
     explore: contacts
     listens_to_filters: []
     field: contacts.contact_date

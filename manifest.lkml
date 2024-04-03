@@ -21,7 +21,8 @@ constant: PROJECT_NAME
 }
 
 
-constant: CCAIP_MODEL {
+constant: CCAIP_MODEL
+{
   value: "sergio_ccaip_reporting"
   export: override_optional
 }
