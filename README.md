@@ -1,6 +1,6 @@
-<h1><span style="color:#2d7eea">README - Your LookML Project</span></h1>
+<h1><span style="color:#2d7eea">README - Sergio CCAIP Reporting Dashboards</span></h1>
 
-<h2><span style="color:#2d7eea">LookML Overview</span></h2>
+<h2><span style="color:#2d7eea">This is a brief description of the project</span></h2>
 
 LookML is a data modeling language for describing dimensions, fields, aggregates and relationships based on SQL.
 
