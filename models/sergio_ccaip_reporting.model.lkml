@@ -5,9 +5,11 @@ connection: "@{CONNECTION_NAME}"
 # include all the views
 include: "/views/**/*.view"
 
-#Dashboards(This needs to be included on the model in order to show on the LookML Dashboard Folder)
-include: "/dashboards/contacts_overal.dashboard.lookml"
 
+#Dashboards(These need to be included on the model in order to show on the LookML Dashboard Folder)
+#include: "/dashboards/contacts_overal.dashboard.lookml"
+#include: "/dashboards/queue_transactional_report.dashboard.lookml"
+include: "/dashboards/*.dashboard"
 
 datagroup: ccaip_reporting_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
