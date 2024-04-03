@@ -6,8 +6,8 @@
   description: ''
   preferred_slug: rDPufb5Nyl26wUhuTebu58
   elements:
-  - title: NLL SLA% KPI
-    name: NLL SLA% KPI
+  - title: LAB SLA% KPI
+    name: LAB SLA% KPI
     model: "@{CCAIP_MODEL}"
     explore: contacts
     type: marketplace_viz_radial_gauge::radial_gauge-marketplace
