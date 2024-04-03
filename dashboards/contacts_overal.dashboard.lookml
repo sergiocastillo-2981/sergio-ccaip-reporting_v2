@@ -13,7 +13,7 @@
     type: marketplace_viz_radial_gauge::radial_gauge-marketplace
     fields: [contacts.perc_in_sla]
     filters:
-      contacts.brand_name: nlok
+      contacts.brand_name: Lab
     sorts: [contacts.perc_in_sla desc 0]
     limit: 500
     column_limit: 50
