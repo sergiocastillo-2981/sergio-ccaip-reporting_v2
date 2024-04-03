@@ -40,7 +40,7 @@
     defaults_version: 1
     listen:
       Call ID: call_details.call_id
-      Call Brand Name: call_details.brand_name
+      Instance Name: call_details.brand_name
       Team Company: call_queued_interactions.qd_team_company
       Interaction Start Time: call_queued_interactions.qd_interaction_start_time
     row: 0
@@ -80,7 +80,7 @@
     defaults_version: 1
     listen:
       Call ID: call_details.call_id
-      Call Brand Name: call_details.brand_name
+      Instance Name: call_details.brand_name
       Team Company: call_handled_interactions.hd_team_company
       Interaction Start Time: call_handled_interactions.hd_interaction_start_time
     row: 7
@@ -88,8 +88,8 @@
     width: 24
     height: 7
   filters:
-  - name: Call Brand Name
-    title: Call Brand Name
+  - name: Instance Name
+    title: Instance Name
     type: field_filter
     default_value: avast
     allow_multiple_values: true
@@ -140,5 +140,5 @@
       display: popover
     model: "@{CCAIP_MODEL}"
     explore: queue_transactional
-    listens_to_filters: [Call Brand Name]
+    listens_to_filters: [Instance Name]
     field: call_handled_interactions.hd_team_company
