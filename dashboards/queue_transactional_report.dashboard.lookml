@@ -91,7 +91,7 @@
   - name: Instance Name
     title: Instance Name
     type: field_filter
-    default_value: avast
+    default_value: Lab
     allow_multiple_values: true
     required: false
     ui_config:
