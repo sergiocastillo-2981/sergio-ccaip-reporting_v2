@@ -5,6 +5,10 @@ connection: "@{CONNECTION_NAME}"
 # include all the views
 include: "/views/**/*.view"
 
+#Dashboards
+include: "/dashboards/contacts_overal.dashboard.lookml"   # Including LookML dashboard called agent_assist_metrics
+
+
 datagroup: ccaip_reporting_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
