@@ -1,6 +1,6 @@
-<h1><span style="color:#2d7eea">README - Sergio CCAIP Reporting Dashboards</span></h1>
-
-<h2><span style="color:#2d7eea">This is a brief description of the project</span></h2>
+<h1><span style="color:#2d7eea">README - CCAIP Reporting Dashboards</span></h1>
+<h2><span style="color:#2d7eea">Do not DELETE</span></h2>
+<h2><span style="color:#2d7eea">This project contains CCAI Dashboards based on our Custom Database</span></h2>
 
 LookML is a data modeling language for describing dimensions, fields, aggregates and relationships based on SQL.
 
