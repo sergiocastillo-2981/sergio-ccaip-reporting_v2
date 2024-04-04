@@ -15,7 +15,7 @@ view: agent_activity
     SELECT aa.id,aa.agent_id,concat(a.first_name,' ',a.last_name) agent_name,duration
     ,CAST(started_at AS timestamp) as started_at
     ,CAST(ended_at AS timestamp) as ended_at,
-    aa.instance_id,aa.instance_name,aa.status,activity
+    aa.instance_id,aa.instance_name,aa.status,activity,aa.call_id,aa.chat_id
     FROM @{PROJECT_NAME}.@{DATASET}.`t_agent_activity_logs` aa
     left join
     @{PROJECT_NAME}.@{DATASET}.`t_agents` a on aa.agent_id = a.id
@@ -57,10 +57,26 @@ view: agent_activity
     sql: ${TABLE}.agent_name ;;
   }
 
-  #dimension: activity {
-  #  type: string
-  #  sql: ${TABLE}.activity ;;
-  #}
+  dimension: call_id
+  {
+    type: number
+    sql: ${TABLE}.call_id ;;
+
+    link: {
+      label: "Queue Transactional Detail"
+      #url: "https://ttec.cloud.looker.com/dashboards/171?Agent+ID={{ v_agent_activity_logs.agent_id._value }}"
+      url: "https://ttec.cloud.looker.com/dashboards/sergio_ccaip_reporting::queue_transactional_report?Call%20ID={{ agent_activity.call_id._value }}"
+    }
+
+
+
+  }
+
+  dimension: chat_id
+  {
+    type: number
+    sql: ${TABLE}.chat_id ;;
+  }
 
   dimension: duration
   {
