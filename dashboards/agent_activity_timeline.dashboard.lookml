@@ -1,4 +1,3 @@
----
 - dashboard: agent_activity_timeline
   title: Agent Activity Timeline
   layout: newspaper
