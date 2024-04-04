@@ -3,15 +3,25 @@ view: agent_activity
   #sql_table_name: `ppp-csis-ccaiacc-57.ccaip_gendigital_reporting.t_agent_activity_logs` ;;
   derived_table:
   {
+    #sql:
+    #SELECT id,agent_id,duration
+    #,CAST(started_at AS timestamp) as started_at
+    #,CAST(ended_at AS timestamp) as ended_at,
+    #instance_id,instance_name,status,activity
+    #FROM @{PROJECT_NAME}.@{DATASET}.`t_agent_activity_logs`
+    #;;
+
     sql:
-    SELECT id,agent_id,duration
+    SELECT aa.id,aa.agent_id,concat(a.first_name,' ',a.last_name) agent_name,duration
     ,CAST(started_at AS timestamp) as started_at
     ,CAST(ended_at AS timestamp) as ended_at,
-    instance_id,instance_name,status,activity
-    FROM @{PROJECT_NAME}.@{DATASET}.`t_agent_activity_logs`
+    aa.instance_id,aa.instance_name,aa.status,activity
+    FROM @{PROJECT_NAME}.@{DATASET}.`t_agent_activity_logs` aa
+    left join
+    @{PROJECT_NAME}.@{DATASET}.`t_agents` a on aa.agent_id = a.id
     ;;
   }
-  #drill_fields: [id]
+
 
 
 
@@ -39,6 +49,12 @@ view: agent_activity
   {
     type: number
     sql: ${TABLE}.agent_id ;;
+  }
+
+  dimension: agent_name
+  {
+    type: string
+    sql: ${TABLE}.agent_name ;;
   }
 
   #dimension: activity {

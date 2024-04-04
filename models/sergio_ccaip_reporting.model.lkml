@@ -61,12 +61,14 @@ explore: call_details
 explore: agent_activity
 {
   label: "Agent Activity"
-  join: team_structure
-  {
-    type: left_outer
-    sql_on: ${agent_activity.agent_id} = ${team_structure.agent_id} and ${agent_activity.instance_id} = ${team_structure.instance_id} ;;
-    relationship: many_to_one
-  }
+
+  #This Team Structure was made for a specific customer need to come up wit a new structure
+  #join: team_structure
+  #{
+  #  type: left_outer
+  #  sql_on: ${agent_activity.agent_id} = ${team_structure.agent_id} and ${agent_activity.instance_id} = ${team_structure.instance_id} ;;
+  #  relationship: many_to_one
+  #}
 }
 
 explore: agent_performance
