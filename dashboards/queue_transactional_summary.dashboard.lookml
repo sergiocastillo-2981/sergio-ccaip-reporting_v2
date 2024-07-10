@@ -85,7 +85,7 @@
     listens_to_filters: []
     field: call_interactions.qi_started_date
   - name: Brand Name
-    title: Brand Name
+    title: Instance Name
     type: field_filter
     default_value: ''
     allow_multiple_values: true

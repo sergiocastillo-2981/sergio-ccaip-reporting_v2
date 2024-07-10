@@ -379,6 +379,17 @@ view: call_interactions {
     value_format_name: HMS
   }
 
+  measure: avg_handle_time_test
+  {
+    #using avg(handle) or handle/queue interactios shows same result
+    group_label: "Avg"
+    description: "Handle Duration / Queue Interactions"
+    type: number
+    #sql:  ${handle_duration}/86400.0;;
+     sql: (${total_handle_time} / ${count})/86400.0 ;;
+    value_format_name: HMS
+  }
+
 
   measure: avg_talk_time_hms
   {
