@@ -18,6 +18,7 @@ datagroup: ccaip_reporting_default_datagroup {
 
 persist_with: ccaip_reporting_default_datagroup
 
+
 explore: contacts
 {
   label: "Contacts"
